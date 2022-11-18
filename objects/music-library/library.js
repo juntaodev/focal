@@ -39,7 +39,9 @@ const library = {
 // p02: Other Playlist - 1 tracks
 const printPlaylists = function() {
 
-}
+  console.log(`${library.playlists.p01.id}: ${library.playlists.p01.name} - ${library.playlists.p01.tracks.length} track(s)`);
+  console.log(`${library.playlists.p02.id}: ${library.playlists.p02.name} - ${library.playlists.p02.tracks.length} track(s)`);
+};
 
 
 // prints a list of all tracks, using the following format:
