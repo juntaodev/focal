@@ -96,9 +96,16 @@ const generateUid = function() {
 
 // adds a track to the library
 const addTrack = function(name, artist, album) {
-
-}
-
+  let uniqueID = generateUid();
+  library.tracks[uniqueID] = {
+    id: uniqueID,
+    album: album,
+    artist: artist,
+    name: name
+  };
+  console.log(library.tracks);
+};
+addTrack("Starboy", "Weekend", "Starboy");
 
 // adds a playlist to the library
 const addPlaylist = function(name) {
