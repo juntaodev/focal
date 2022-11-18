@@ -109,9 +109,14 @@ addTrack("Starboy", "Weekend", "Starboy");
 
 // adds a playlist to the library
 const addPlaylist = function(name) {
-
-}
-
+  let uniqueID = generateUid();
+  library.playlists[uniqueID] = {
+    id: uniqueID,
+    name: name,
+    tracks: []
+  };
+};
+addPlaylist("DISCO VIBE");
 
 // STRETCH:
 // given a query string string, prints a list of tracks
