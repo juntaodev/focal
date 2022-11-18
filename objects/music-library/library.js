@@ -68,15 +68,24 @@ printTracks();
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
 // t02: Model View Controller by James Dempsey (WWDC 2003)
 const printPlaylist = function(playlistId) {
-
-}
-
+  let playlistName = library.playlists[playlistId].name;
+  let numberTracks = library.playlists[playlistId].tracks.length;
+  console.log(`${playlistId}: ${playlistName} - ${numberTracks} tracks`);
+  for (let key of library.playlists[playlistId].tracks) {
+    let songTitle = library.tracks[key].name;
+    let artist = library.tracks[key].artist;
+    let album = library.tracks[key].album;
+    console.log(`${key}: ${songTitle} by ${artist} (${album})`);
+  }
+};
+printPlaylist('p01');
 
 // adds an existing track to an existing playlist
 const addTrackToPlaylist = function(trackId, playlistId) {
-
-}
-
+  library.playlists[playlistId].tracks.push(trackId);
+  console.log(`${trackId} was added to playlist ${playlistId}. ${playlistId} tracks: ${library.playlists[playlistId].tracks}`);
+};
+addTrackToPlaylist('t03', 'p01');
 
 // generates a unique id
 // (already implemented: use this for addTrack and addPlaylist)
